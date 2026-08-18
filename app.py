@@ -75,10 +75,10 @@ def send_whatsapp_template_concert(to_number: str, name: str, seat: int, event_t
 
 
 # ------------------ EXISTING CONFIG --------------------------------------------
-GOOGLE_SHEET_NAME = os.getenv("GOOGLE_SHEET_NAME", "HitechConcertBookings")
+GOOGLE_SHEET_NAME = os.getenv("GOOGLE_SHEET_NAME", "MovieBookings_Chandanagar")
 GOOGLE_SHEET_KEY = os.getenv("GOOGLE_SHEET_KEY")
 SERVICE_ACCOUNT_FILE = os.getenv("SERVICE_ACCOUNT_FILE", "/etc/secrets/service_account.json")
-APP_BASE_URL = os.getenv("APP_BASE_URL", "https://hitech-christian-center.onrender.com")
+APP_BASE_URL = os.getenv("APP_BASE_URL", "https://movienight-chandanagar.onrender.com")
 CLEAR_TOKEN = os.getenv("CLEAR_TOKEN")
 
 SCOPES = [
