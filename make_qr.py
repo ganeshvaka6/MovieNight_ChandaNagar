@@ -1,7 +1,7 @@
 
 import qrcode
 
-APP_BASE_URL = "https://hitech-christian-center.onrender.com"
+APP_BASE_URL = "https://movienight-chandanagar.onrender.com"
 
 endpoint = "/"
 full_url = f"{APP_BASE_URL.rstrip('/')}{endpoint}"
@@ -11,6 +11,6 @@ qr.add_data(full_url)
 qr.make(fit=True)
 
 img = qr.make_image(fill_color="black", back_color="white")
-img.save("qr_code.png")
+img.save("MovieNight_QR.png")
 
 print("QR code generated for:", full_url)
