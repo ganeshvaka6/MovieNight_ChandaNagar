@@ -86,8 +86,8 @@
     }
 
     /* Larger space after seat positions 5 and 10 in EACH row */
-    .row .seat:nth-child(5) { margin-right: var(--middle-gap); }  /* gap between 5 and 6 */
-    .row .seat:nth-child(10) { margin-right: var(--middle-gap); } /* gap between 10 and 11 */
+    .row .seat:nth-child(5) { margin-right: var(--middle-gap); }   /* gap between 5 and 6 */
+    .row .seat:nth-child(10) { margin-right: var(--middle-gap); }  /* gap between 10 and 11 */
 
     #legend {
         display: flex;
@@ -113,6 +113,7 @@
     .legend-available { background: #fff; border-color: #28a745; }
     .legend-selected  { background: #28a745; border-color: #000; }
     .legend-booked    { background: #6c757d; border-color: #6c757d; }
+
     #selected-info {
         max-width: 640px;
         margin: 20px auto;
@@ -195,6 +196,7 @@
         border-radius: 0 5px 5px 0; /* connect with label */
         margin: 0;                  /* prevent double margins inside the wrap */
     }
+
     /* Info bar */
     .notice-bar {
         display: none;              /* hidden until a seat is selected */
@@ -207,6 +209,7 @@
         margin: 6px 0 12px 0;
         text-align: left;
     }
+
     /* Mobile tweak: stack full width */
     @media (max-width: 480px) {
         .whatsapp-input-wrap { width: 100%; }
@@ -216,21 +219,22 @@
 <body>
 
 <div id="registration-section">
-    <h1>Hitech Christian Center<br>Special Live Music Concert</h1>
+    <h1>Potters House<br>Special Weekend Movie Screening</h1>
     <p class="blink-text">Limited Slots for Free Registration</p>
     <p><strong>Event Timing:</strong> August 22nd, 2026, at 7:00 PM</p>
     <p><strong>Event Address:</strong><br>
-        Hitech Christian Center, 4th Floor, SBR Gate Way,<br>
-        Above Haldirams,beside Medicover,<br>
-        Hitech City, Hyderabad, Telangana 500032
+        Potters House, 403, 4th Floor, Ashish My Space,<br>
+        Above Khazana Jewellers,Beside Jp Cinemas <br>
+        Hyderabad-500050, Telangana.
     </p>
+
     <div id="legend">
         <span class="legend-item"><span class="legend-box legend-available"></span> Available</span>
         <span class="legend-item"><span class="legend-box legend-selected"></span> Selected</span>
         <span class="legend-item"><span class="legend-box legend-booked"></span> Booked</span>
     </div>
-    <div style="font-size:18px; color:#007bff; margin:10px 0 12px;">Register here:</div>
 
+    <div style="font-size:18px; color:#007bff; margin:10px 0 12px;">Register here:</div>
     <div id="seat-container"></div>
     <div class="subtle">Tip: You can horizontally scroll rows if they overflow on small screens.</div>
 </div>
@@ -243,7 +247,7 @@
     </div>
     <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px;">
         <div id="selected-count" class="subtle">No seats selected</div>
-    <button id="submit-btn">Book Seats</button>
+        <button id="submit-btn">Book Seats</button>
     </div>
 </div>
 
@@ -251,7 +255,7 @@
 /* Use Flask-provided seat_count if available; fallback to 150 */
 const seatCount = (typeof {{ seat_count | tojson | safe }} !== 'undefined' && {{ seat_count | tojson | safe }} !== null)
   ? {{ seat_count | tojson | safe }}
-  : 210;
+  : 105;
 
 const seatsPerRow = 15;  // 15 seats per row (visual gaps after 5 and 10)
 let selectedSeats = [];
