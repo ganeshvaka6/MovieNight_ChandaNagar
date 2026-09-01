@@ -221,7 +221,14 @@ def submit():
         final = ", ".join(map(str, all_confirmed))
         return jsonify({
             "ok": True,
-            "message": f"Thank you for registering! Seat(s) {final} confirmed."
+            "message": f"""Dear Participant,
+
+        Thank you for registering for our Free Live Music Concert!
+Your registration has been successfully completed. We’re excited to have you join us for this Music Concert.
+
+        Your seat number: {final}
+
+        Thank you"""
         }), 200
 
     except Exception as e:
